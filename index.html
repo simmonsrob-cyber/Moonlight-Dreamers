@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Moonlight Dreamers v25</title>
+<title>The Moonlight Dreamers v26</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Debut album The Sunny Side.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -58,6 +58,11 @@ ul.shows{list-style:none;padding:0;margin:0}
 .show.feature h3{color:var(--teal)}
 .tag{margin-left:10px;font:600 10px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;border:1px solid #666;color:#999;padding:2px 7px;vertical-align:middle}
 .show.past{opacity:.72}
+.show.past:hover{opacity:1}
+.flyer{flex:none;display:block;width:88px;height:88px;border:1px solid #3a3a3a;transition:box-shadow .2s,border-color .2s}
+.flyer img{width:100%;height:100%;object-fit:cover;display:block}
+.flyer:hover,.flyer:focus-visible{border-color:rgba(95,214,180,.55);box-shadow:0 0 22px rgba(95,214,180,.45),0 0 60px rgba(95,214,180,.18)}
+@media(max-width:600px){.flyer{width:64px;height:64px}.show{gap:14px}}
 .past-title{margin:56px 0 4px;text-align:center;font:600 13px Montserrat,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--g1)}
 .band-grid{display:grid;grid-template-columns:1fr;gap:34px;justify-items:center}
 .band-grid>div{width:100%;max-width:720px}
@@ -118,7 +123,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 
 <footer>
   <span>&copy; <span id="yr"></span> The Moonlight Dreamers - All Rights Reserved.</span>
-  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v25</span></span>
+  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v26</span></span>
 </footer>
 
 <script>
@@ -154,14 +159,14 @@ const CONFIG = {
   shows: [
     { date:"2026-11-28", venue:"Album Release Party at John Barleycorns", city:"", time:"Show at 9:00 PM", note:"Doors 8:00 PM. With Evening Gown and John Ross McEwen", ticket:"", sample:false },
     // PAST shows, from the band's Instagram posts and flyers. Cities left blank where the flyer did not say.
-    { date:"2026-09-11", venue:"Summer's End Mini-Fest at Brickyard", city:"Wichita, KS", time:"7:30 PM", note:"$10, 18+. With Madi Laughlin, Neon Run, Milkwave and Keo & Them", ticket:"", sample:false },
-    { date:"2026-08-22", venue:"Wichita Forever Fest at Norton's Brewing", city:"", time:"", note:"Free show. 100 bands, 10 venues", ticket:"", sample:false },
-    { date:"2026-06-28", venue:"Kirby's Beer Store", city:"", time:"", note:"Sunday funday with Justin Alan Payne and Rachel & Griffin", ticket:"", sample:false },
-    { date:"2026-04-01", venue:"Kirby's Beer Store", city:"", time:"9:00 PM", note:"21+. Shadowwork's Something's Burning Tour, with Sunblush", ticket:"", sample:false },
-    { date:"2026-02-07", venue:"Barleycorn's", city:"", time:"9:00 PM", note:"$10, 21+. With Keo & Them, Milkwave and Couchlock", ticket:"", sample:false },
-    { date:"2026-01-17", venue:"Meat Fest at Kirby's Beer Store", city:"", time:"", note:"Three-day festival", ticket:"", sample:false },
-    { date:"2025-10-31", venue:"Halloween at the Shamrock", city:"", time:"9:00 PM", note:"$5. With Evening Gown and Indigo Sol", ticket:"", sample:false },
-    { date:"2025-09-04", venue:"Kirby's Beer Store", city:"", time:"", note:"", ticket:"", sample:false }
+    { date:"2026-09-11", flyer:"flyer-2026-09-11.jpg", post:"https://www.instagram.com/p/DckHOjHpAO_/", venue:"Summer's End Mini-Fest at Brickyard", city:"Wichita, KS", time:"7:30 PM", note:"$10, 18+. With Madi Laughlin, Neon Run, Milkwave and Keo & Them", ticket:"", sample:false },
+    { date:"2026-08-22", flyer:"flyer-2026-08-22.jpg", post:"https://www.instagram.com/p/Dbt7D4StyiS/", venue:"Wichita Forever Fest at Norton's Brewing", city:"", time:"", note:"Free show. 100 bands, 10 venues", ticket:"", sample:false },
+    { date:"2026-06-28", flyer:"flyer-2026-06-28.jpg", post:"https://www.instagram.com/p/DaBuBWsgzmD/", venue:"Kirby's Beer Store", city:"", time:"", note:"Sunday funday with Justin Alan Payne and Rachel & Griffin", ticket:"", sample:false },
+    { date:"2026-04-01", flyer:"flyer-2026-04-01.jpg", post:"https://www.instagram.com/p/DVCMcCOgeRS/", venue:"Kirby's Beer Store", city:"", time:"9:00 PM", note:"21+. Shadowwork's Something's Burning Tour, with Sunblush", ticket:"", sample:false },
+    { date:"2026-02-07", flyer:"flyer-2026-02-07.jpg", post:"https://www.instagram.com/p/DUO56R7gWGw/", venue:"Barleycorn's", city:"", time:"9:00 PM", note:"$10, 21+. With Keo & Them, Milkwave and Couchlock", ticket:"", sample:false },
+    { date:"2026-01-17", flyer:"flyer-2026-01-17.jpg", post:"https://www.instagram.com/p/DTgn2YCAWip/", venue:"Meat Fest at Kirby's Beer Store", city:"", time:"", note:"Three-day festival", ticket:"", sample:false },
+    { date:"2025-10-31", flyer:"flyer-2025-10-31.jpg", post:"https://www.instagram.com/p/DPjiTSyDZV3/", venue:"Halloween at the Shamrock", city:"", time:"9:00 PM", note:"$5. With Evening Gown and Indigo Sol", ticket:"", sample:false },
+    { date:"2025-09-04", flyer:"flyer-2025-09-04.jpg", post:"https://www.instagram.com/p/DNRkYv8NeF9/", venue:"Kirby's Beer Store", city:"", time:"", note:"", ticket:"", sample:false }
   ]
 };
 /* ========================================= */
@@ -195,6 +200,7 @@ Object.keys(PLATFORM_NAMES).filter(k=>CONFIG.links[k]).forEach(key=>{
     const info = el("div",{class:"info"}); const h = el("h3",{},s.venue); if(s.sample) h.append(el("span",{class:"tag"},"Sample"));
     info.append(h, el("div",{class:"meta"},[s.city,s.time,s.note].filter(Boolean).join(" \u00b7 ")));
     li.append(date, info);
+    if(isPast && s.flyer){ const fa=el("a",{class:"flyer",href:s.post||"#",target:"_blank",rel:"noopener","aria-label":"View the Instagram post for "+s.venue}); fa.append(el("img",{src:s.flyer,alt:"Flyer for "+s.venue,loading:"lazy"})); li.append(fa); }
     if(s.ticket && !isPast){ li.append(el("a",{class:"btn",href:s.ticket,target:"_blank",rel:"noopener"},"Tickets")); }
     return li;
   }
