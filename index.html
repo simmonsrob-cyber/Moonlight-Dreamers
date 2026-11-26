@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Moonlight Dreamers v14</title>
+<title>The Moonlight Dreamers v15</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Debut album The Sunny Side.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
   <nav aria-label="Main"><a href="#listen">Listen</a><a href="#shows">Shows</a><a href="#band">The Band</a><a href="#contact-us">Contact</a></nav>
   <div class="hero-main">
     <h1>Debut Album &ldquo;Sunny Side&rdquo; Out Now</h1>
-    <p>Album release party Saturday, November 28 at John Barleycorns, Wichita.</p>
+    <p id="hero-next" hidden></p>
     <a class="btn" href="#listen">Listen Now</a>
   </div>
 </header>
@@ -80,6 +80,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
   <h2>Shows</h2><div class="rule"></div>
   <p class="lead center" id="shows-intro">Catch us live.</p>
   <ul class="shows" id="shows-list"></ul>
+  <p class="center" id="shows-ig" style="margin:28px 0 0">Check <a href="https://www.instagram.com/themoonlightdreamers_ict/" target="_blank" rel="noopener">Instagram</a> for upcoming show dates.</p>
   <div id="past-wrap" hidden><div class="past-title">Past shows</div><ul class="shows" id="past-shows"></ul></div>
 </div></section>
 
@@ -106,7 +107,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 
 <footer>
   <span>&copy; <span id="yr"></span> The Moonlight Dreamers - All Rights Reserved.</span>
-  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v14</span></span>
+  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v15</span></span>
 </footer>
 
 <script>
@@ -184,7 +185,8 @@ Object.keys(PLATFORM_NAMES).filter(k=>CONFIG.links[k]).forEach(key=>{
     if(s.ticket && !isPast){ li.append(el("a",{class:"btn",href:s.ticket,target:"_blank",rel:"noopener"},"Tickets")); }
     return li;
   }
-  if(!upcoming.length){ $("shows-intro").textContent="No shows on the calendar right now. Join the email list below and you will hear first."; }
+  const nx=upcoming[0], hn=$("hero-next"); if(nx){ hn.textContent="Next show: "+nx.d.toLocaleString("en-US",{weekday:"long",month:"long",day:"numeric"})+" \u00b7 "+nx.venue+(nx.city?", "+nx.city:""); hn.hidden=false; }
+  if(!upcoming.length){ $("shows-intro").textContent="No shows on the calendar right now."; }
   upcoming.forEach(s=>$("shows-list").append(row(s,false)));
   if(past.length){ $("past-wrap").hidden=false; past.forEach(s=>$("past-shows").append(row(s,true))); }
 })();
