@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Moonlight Dreamers v18</title>
+<title>The Moonlight Dreamers v19</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Debut album The Sunny Side.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -97,25 +97,18 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 <section id="contact-us"><div class="wrap">
   <h2>Contact Us</h2><div class="rule"></div>
   <p class="lead center" style="color:#fff">Drop us a line!</p>
-  <form id="contact-form" novalidate>
-    <input class="field" id="name" name="name" placeholder="Name" autocomplete="name" aria-label="Name">
-    <input class="field" id="email" name="email" type="email" placeholder="Email*" autocomplete="email" aria-label="Email" required>
-    <textarea class="field" id="message" name="message" placeholder="Message" aria-label="Message"></textarea>
-    <label class="check"><input type="checkbox" id="optin"> Sign up for our email list for updates, promotions, and more.</label>
-    <div class="center"><button class="btn" type="submit">Send</button></div>
-    <div class="msg" id="msg" role="status" aria-live="polite"></div>
-  </form>
+  <div class="center" style="margin-top:8px"><a class="btn" id="email-band" href="#" style="font-size:20px;padding:20px 44px;display:inline-block">Email the band</a></div>
 </div></section>
 
 <footer>
   <span>&copy; <span id="yr"></span> The Moonlight Dreamers - All Rights Reserved.</span>
-  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v18</span></span>
+  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v19</span></span>
 </footer>
 
 <script>
 /* ============ EDIT THIS BLOCK ============ */
 const CONFIG = {
-  contactEmail: "",   // band contact email, e.g. "hello@example.com"
+  contactEmail: "band@example.com",   // PLACEHOLDER: replace with the band contact email
 
   // Only links filled in here appear on the page.
   links: {
@@ -208,26 +201,8 @@ if(CONFIG.contactEmail){ $("contact").href="mailto:"+CONFIG.contactEmail; $("con
   $("band").querySelector(".wrap").append(p);
 })();
 
-// Contact + signup
-$("contact-form").addEventListener("submit", async e=>{
-  e.preventDefault();
-  const msg=$("msg"), email=$("email").value.trim(), name=$("name").value.trim(), text=$("message").value.trim();
-  msg.className="msg";
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.classList.add("err"); msg.textContent="Please enter a valid email address."; return; }
-  let done=[];
-  if($("optin").checked){
-    if(CONFIG.signupEndpoint){
-      try{ const b=new URLSearchParams(); b.set(CONFIG.signupFieldName,email); await fetch(CONFIG.signupEndpoint,{method:"POST",body:b,mode:"no-cors"}); done.push("You are on the email list."); }
-      catch(err){ msg.classList.add("err"); msg.textContent="Something went wrong. Please try again in a minute."; return; }
-    } else { done.push("The email list is not connected yet."); }
-  }
-  if(text){
-    if(CONFIG.contactEmail){ location.href="mailto:"+CONFIG.contactEmail+"?subject="+encodeURIComponent("Message from "+(name||email))+"&body="+encodeURIComponent(text+"\n\n"+(name||"")+"\n"+email); done.push("Opening your email app to send the message."); }
-    else { done.push("Message sending is not connected yet."); }
-  }
-  if(!done.length) done.push("Thanks! Add a message or check the box to join the list.");
-  msg.textContent=done.join(" ");
-});
+// Email the band
+$("email-band").href="mailto:"+CONFIG.contactEmail;
 </script>
 </body>
 </html>
