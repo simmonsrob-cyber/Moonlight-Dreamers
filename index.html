@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Moonlight Dreamers v19</title>
+<title>The Moonlight Dreamers v20</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Debut album The Sunny Side.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@ a{color:#fff}
 h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;margin:0}
 .wrap{max-width:900px;margin:0 auto;padding:0 24px}
 .hero{position:relative;min-height:640px;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url("TMD%20Space%20photo.jpg") center/cover;display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff}
-.wordmark{margin:26px 0 0;width:min(300px,62vw)}.wordmark img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 14px rgba(0,0,0,.35))}.sunset{position:relative;width:100vw;margin:0 0 34px calc(50% - 50vw);height:100vh;min-height:420px;background:url("sunset-photo.jpg") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center}
+.wordmark{margin:26px 0 0;width:min(300px,62vw)}.wordmark img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 14px rgba(0,0,0,.35))}.sunset{position:relative;width:100vw;margin:0 0 34px calc(50% - 50vw);height:min(58vh,560px);min-height:340px;background:url("sunset-photo.jpg") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center}
 .sunset span{font-family:"Playfair Display",Georgia,serif;font-size:clamp(26px,5vw,44px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.7);padding-bottom:48px}
 body{overflow-x:hidden}
 nav{margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;justify-content:center;font:600 12px Montserrat,sans-serif;letter-spacing:3px;text-transform:uppercase}
@@ -102,7 +102,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 
 <footer>
   <span>&copy; <span id="yr"></span> The Moonlight Dreamers - All Rights Reserved.</span>
-  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v19</span></span>
+  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v20</span></span>
 </footer>
 
 <script>
@@ -117,6 +117,8 @@ const CONFIG = {
     appleMusic:"https://music.apple.com/us/artist/the-moonlight-dreamers/6820270388",
     youtube:   "https://www.youtube.com/channel/UC5uT1FRF9n4wLP1GJmuvCMw",
     deezer:    "https://www.deezer.com/us/artist/420929912",
+    amazonMusic:"https://music.amazon.com/albums/B0HM9F3GL9",
+    pandora:   "https://www.pandora.com/artist/the-moonlight-dreamers/the-sunny-side/ALbrxkf5k67g5f2",
     instagram: "https://www.instagram.com/themoonlightdreamers_ict/"
   },
 
@@ -148,7 +150,7 @@ const CONFIG = {
 };
 /* ========================================= */
 
-const PLATFORM_NAMES = {bandcamp:"Bandcamp",spotify:"Spotify",appleMusic:"Apple Music",youtube:"YouTube",deezer:"Deezer",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok"};
+const PLATFORM_NAMES = {bandcamp:"Bandcamp",spotify:"Spotify",appleMusic:"Apple Music",youtube:"YouTube",deezer:"Deezer",amazonMusic:"Amazon Music",pandora:"Pandora",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok"};
 const $ = id => document.getElementById(id);
 function el(tag, attrs, text){const e=document.createElement(tag);for(const k in (attrs||{}))e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
 
