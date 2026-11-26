@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Moonlight Dreamers v7</title>
+<title>The Moonlight Dreamers v8</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Listen to The Sunny Side, see upcoming shows, and get updates.">
 <meta property="og:title" content="The Moonlight Dreamers">
 <meta property="og:description" content="Album release party Saturday, November 28. Listen to The Sunny Side.">
@@ -270,7 +270,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 <footer>
   <div class="wrap">
     <span>&copy; <span id="yr"></span> The Moonlight Dreamers</span>
-    <span><a href="mailto:" id="contact">Contact</a> <span class="badge">v7</span></span>
+    <span><a href="mailto:" id="contact">Contact</a> <span class="badge">v8</span></span>
   </div>
 </footer>
 
@@ -285,11 +285,8 @@ const CONFIG = {
     spotify:   "https://open.spotify.com/artist/59UGNzDOHF2yo3YIt8HiCY",
     appleMusic:"https://music.apple.com/us/artist/the-moonlight-dreamers/6820270388",
     youtube:   "https://www.youtube.com/channel/UC5uT1FRF9n4wLP1GJmuvCMw",
-    amazon:    "",
-    soundcloud:"",
-    instagram: "https://www.instagram.com/themoonlightdreamers_ict/",
-    facebook:  "",
-    tiktok:    ""
+    deezer:    "https://www.deezer.com/us/artist/420929912",
+    instagram: "https://www.instagram.com/themoonlightdreamers_ict/"
   },
 
   // Where the email signup is sent. Use the "form action" URL from Buttondown,
@@ -320,12 +317,12 @@ const CONFIG = {
 };
 /* ========================================= */
 
-const PLATFORM_NAMES = {bandcamp:"Bandcamp",spotify:"Spotify",appleMusic:"Apple Music",youtube:"YouTube",amazon:"Amazon Music",soundcloud:"SoundCloud",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok"};
+const PLATFORM_NAMES = {bandcamp:"Bandcamp",spotify:"Spotify",appleMusic:"Apple Music",youtube:"YouTube",deezer:"Deezer",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok"};
 const $ = id => document.getElementById(id);
 function el(tag, attrs, text){const e=document.createElement(tag);for(const k in (attrs||{}))e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
 
 // Platforms
-Object.keys(PLATFORM_NAMES).forEach(key=>{
+Object.keys(PLATFORM_NAMES).filter(k=>CONFIG.links[k]).forEach(key=>{
   const url = CONFIG.links[key], li = el("li");
   if(url){
     const a = el("a",{href:url,target:"_blank",rel:"noopener"},PLATFORM_NAMES[key]); a.append(el("span",{"aria-hidden":"true",style:"border:0;padding:0;background:none;box-shadow:none"},"→")); li.append(a);
