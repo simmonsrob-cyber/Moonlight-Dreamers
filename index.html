@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Moonlight Dreamers v21</title>
+<title>The Moonlight Dreamers v22</title>
 <meta name="description" content="The Moonlight Dreamers, a six-piece band from Wichita, Kansas. Debut album The Sunny Side.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,8 +15,7 @@ a{color:#fff}
 h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;margin:0}
 .wrap{max-width:900px;margin:0 auto;padding:0 24px}
 .hero{position:relative;min-height:640px;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url("TMD%20Space%20photo.jpg") center/cover;display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff}
-.wordmark{margin:26px 0 0;width:min(300px,62vw)}.wordmark img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 14px rgba(0,0,0,.35))}.sunset{position:relative;width:min(468px,90vw);aspect-ratio:720/391;margin:0 auto 34px;background:url("sunset-photo.jpg") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center}
-.sunset span{font-family:"Playfair Display",Georgia,serif;font-size:clamp(17px,3vw,22px);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.75);padding-bottom:14px}
+.wordmark{margin:26px 0 0;width:min(300px,62vw)}.wordmark img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 14px rgba(0,0,0,.35))}.cover{display:block;width:min(468px,90vw);height:auto;margin:0 auto 34px}
 .tracklist{list-style:none;margin:0 auto;padding:0;max-width:640px;border-top:1px solid #2b2b2b;text-align:left}
 .trk{position:relative;display:flex;align-items:center;gap:18px;padding:16px 6px;border-bottom:1px solid #2b2b2b}
 .trk .play{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;padding:0;transition:background .15s,color .15s,border-color .15s}
@@ -86,7 +85,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 
 <section id="listen"><div class="wrap">
   <h2>Listen</h2><div class="rule"></div>
-  <div class="sunset" role="img" aria-label="The Sunny Side album cover photo, a barn in a field at sunset"><span>The Sunny Side</span></div>
+  <img class="cover" src="album-cover.jpg" alt="The Sunny Side album cover">
   <div class="player"><ul class="tracklist" id="tracklist"></ul><p class="clipnote">30-second previews. Hear the full album on any of the platforms below.</p></div>
   <ul class="platforms" id="platforms"></ul>
 </div></section>
@@ -115,7 +114,7 @@ footer .badge{border:1px solid #444;padding:1px 8px;font-size:12px;margin-left:8
 
 <footer>
   <span>&copy; <span id="yr"></span> The Moonlight Dreamers - All Rights Reserved.</span>
-  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v21</span></span>
+  <span><a href="mailto:" id="contact">Contact</a><span class="badge">v22</span></span>
 </footer>
 
 <script>
